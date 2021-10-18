@@ -1,0 +1,76 @@
+{
+"items":[
+  {
+    "input": "inputOne",
+    "title":"book",
+    "id": "1",
+    "price":12.49,
+    "salesTax":false,
+    "importTax": false
+  },
+  {
+    "input": "inputOne",
+    "title":"music CD",
+    "id": "2",
+    "price":14.99,
+    "salesTax":true,
+    "importTax": false
+  },
+  {
+    "input": "inputOne",
+    "title":"chocolate bar",
+    "id": "3",
+    "price":0.85,
+    "salesTax":false,
+    "importTax": false
+  },
+  {
+    "input": "inputTwo",
+    "title":"imported box of chocolates",
+    "id": "4",
+    "price":10,
+    "salesTax":false,
+    "importTax": true
+  },
+  {
+    "input": "inputTwo",
+    "title":"imported bottle of perfume",
+    "id": "5",
+    "price":47.50,
+    "salesTax": true,
+    "importTax": true
+  },
+  {
+    "input": "inputThree",
+    "title":"imported bottle of perfume",
+    "id": "6",
+    "price":27.99,
+    "salesTax":true,
+    "importTax": true
+  },
+  {
+    "input": "inputThree",
+    "title":"bottle of perfume",
+    "id": "7",
+    "price":18.99,
+    "salesTax":true,
+    "importTax": false
+  },
+  {
+    "input": "inputThree",
+    "title":"packet of headache pills",
+    "id": "8",
+    "price":9.75,
+    "salesTax":false,
+    "importTax": false
+  },
+  {
+    "input": "inputThree",
+    "title":"box of imported chocolates",
+    "id": "9",
+    "price":11.25,
+    "salesTax":false,
+    "importTax": true
+  }
+]
+}
