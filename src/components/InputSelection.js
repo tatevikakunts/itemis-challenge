@@ -21,9 +21,7 @@ const InputSelection = ()=>{
             console.log(error)
         }
     }
-    // const renderItems = ()=>{
-    //     return items.map((item)=><Receipt key={item.id} item={item}/>)
-    // }
+
     return(
         <>
             <div className="input-container">
@@ -36,7 +34,7 @@ const InputSelection = ()=>{
                 </select>
             </div>
             <Receipt items={items}/>
-            {/*{renderItems()}*/}
+
 
         </>
     )

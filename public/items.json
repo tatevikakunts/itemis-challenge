@@ -28,7 +28,7 @@
     "input": "inputTwo",
     "title":"imported box of chocolates",
     "id": "4",
-    "price":10,
+    "price":10.00,
     "salesTax":false,
     "importTax": true
   },
