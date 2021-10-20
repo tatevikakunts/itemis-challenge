@@ -1,7 +1,7 @@
 import React from "react";
 
 const Total = ({newItems})=>{
-
+//calculation of total sales
     const totalSales = ()=>{
         let sum = 0
 
@@ -10,6 +10,7 @@ const Total = ({newItems})=>{
             sum += +item.taxedPrice)
         return sum
     }
+    //calculation of total taxes
     const totalTaxes = ()=>{
         let sum = 0
         let price = 0

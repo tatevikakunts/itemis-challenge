@@ -9,6 +9,8 @@ const Receipt = ({items})=>{
         getNewItems()
     },[items])
 
+    //cloning the items array and mapping. spreading the each item and changing the taxedPrice property according to the salesTax and importTax calculation
+
     const getNewItems = ()=>{
         let newItems = [...items]
         newItems = newItems.map(item=>{
@@ -32,7 +34,7 @@ const Receipt = ({items})=>{
       setNewItems(newItems)
     }
 
-
+//rendering of the items list
     const renderItems = ()=>{
 
         return newItems.map((item)=> <Item key={item.id} item={item}/>)

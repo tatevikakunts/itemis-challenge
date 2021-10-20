@@ -3,12 +3,12 @@ import Receipt from "./Receipt";
 
 const InputSelection = ()=>{
     const [items, setItems] = useState([])
-
+    // on change event of the select tag is called a function which uses the option value selected
     const changeHandle = (event)=>{
         getItems(event.target.value)
 
     }
-
+//fetching the items from the json file and filtering the ones that are needed for a current input
     const getItems = async(value)=>{
         try{
             let result = await fetch("items.json")
