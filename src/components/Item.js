@@ -1,26 +1,13 @@
-import React, {useState} from "react";
+import React from "react";
 
 const Item = ({item})=>{
-    const [price, setPrice] = useState("")
-    const renderPrice =()=>{
-        if(item.salesTax && item.importTax){
-            let price = item.price +(Math.round(((item.price*15)/100)/0.05)*0.05)
-            return price
-        } else if(item.salesTax){
-            let price = item.price + (Math.round(((item.price*10)/100)/0.05)*0.05)
-            return price
-        }else if(item.importTax){
-            let price = item.price + (Math.round(((item.price*5)/100)/0.05)*0.05)
-            return price
-        }else{
-            return item.price
-        }
-    }
+
     return(
-        <div>
+        <div className="container bg-success bg-opacity-75 rounded-2 my-1 text-white p-2">
             <h3>{item.title}</h3>
-            <h3>{renderPrice()}</h3>
+            <h3 className="price">{item.taxedPrice}</h3>
         </div>
+
     )
 }
 

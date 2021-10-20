@@ -4,7 +4,7 @@ import InputSelection from "./components/InputSelection";
 
 const App = ()=>{
   return(
-      <section>
+      <section className="main-section">
         <InputSelection/>
       </section>
   )

@@ -1,27 +1,50 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import Item from "./Item";
+import Total from "./Total";
 
 const Receipt = ({items})=>{
-    const [total, setTotal] = useState("")
-    const [taxes, setTaxes] = useState("")
+    const [newItems, setNewItems] = useState([])
+
+    useEffect(()=>{
+        getNewItems()
+    },[items])
+
+    const getNewItems = ()=>{
+        let newItems = [...items]
+        newItems = newItems.map(item=>{
+            if(item.salesTax && item.importTax){
+                let taxedPrice = parseFloat(item.price +(Math.round(((item.price*15)/100)/0.05)*0.05)).toFixed(2)
+                item = {...item, taxedPrice:taxedPrice}
+                return item
+            } else if(item.salesTax){
+                let taxedPrice = parseFloat(item.price +(Math.round(((item.price*10)/100)/0.05)*0.05)).toFixed(2)
+                item = {...item, taxedPrice:taxedPrice}
+                return item
+            }else if(item.importTax){
+                let taxedPrice = parseFloat(item.price +(Math.round(((item.price*5)/100)/0.05)*0.05)).toFixed(2)
+                item = {...item, taxedPrice:taxedPrice}
+                return item
+            }else{
+                item = {...item, taxedPrice:item.price}
+                return item
+            }
+        })
+      setNewItems(newItems)
+    }
+
 
     const renderItems = ()=>{
-        return items.map((item)=><Item key={item.id} item={item}/>)
+
+        return newItems.map((item)=> <Item key={item.id} item={item}/>)
+
     }
-    // const totalCount = ()=>{
-    //     let total = 0
-    //
-    //     items.forEach((item)=>
-    //     total += item.price
-    //     )
-    //     return(<h1>{total}</h1>)
-    // }
+
+
 
     return(
-        <section>
+        <section className="receipt-container py-5 px-2">
             {renderItems()}
-            {/*{totalCount()}*/}
-
+            <Total newItems ={newItems}/>
 
         </section>
     )
